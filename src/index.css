@@ -1,20 +1,36 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
+/* Utility untuk efek teks outline */
 @layer utilities {
   .text-outline {
     color: transparent;
-    -webkit-text-stroke: 2px #ef4444; /* Warna merah/oranye dari desain */
+    -webkit-text-stroke: 2px #ff4500;
   }
 }
 
+/* Background perspektif grid */
 .bg-perspective-grid {
   background-color: #f8f9fa;
   background-image: 
-    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
   background-size: 60px 60px;
-  /* Masking radial untuk memberikan efek menghilang di pinggir seperti pada gambar */
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
   mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* Custom Animasi Marquee (karena konfigurasi v4 lebih mudah via CSS murni) */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+/* Aktifkan smooth scrolling secara global */
+html {
+  scroll-behavior: smooth;
 }

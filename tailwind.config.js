@@ -2,16 +2,10 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}", // 👈 Pastikan baris ini ada
   ],
   theme: {
-    extend: {
-      colors: {
-        dark: '#0f172a',
-        darker: '#020617',
-        accent: '#38bdf8'
-      }
-    },
+    extend: {},
   },
   plugins: [],
 }

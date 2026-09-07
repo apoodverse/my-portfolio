@@ -1,40 +1,64 @@
-import { Home, User, Briefcase, Mail } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Home, User, Briefcase, Code, Award, Mail } from 'lucide-react';
 
 const Navbar = () => {
+  const [active, setActive] = useState('home');
+
+  // Mendeteksi posisi scroll untuk mengubah active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'experience', 'projects', 'certifications', 'contact'];
+      // Menambahkan offset agar transisi warna lebih responsif saat mendekati section baru
+      const scrollPosition = window.scrollY + 250;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
+          setActive(section);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { id: 'home', icon: <Home size={16} />, label: 'Home' },
+    { id: 'about', icon: <User size={16} />, label: 'About' },
+    { id: 'experience', icon: <Code size={16} />, label: 'Experience' },
+    { id: 'projects', icon: <Briefcase size={16} />, label: 'Projects' },
+    { id: 'certifications', icon: <Award size={16} />, label: 'Certs' },
+    { id: 'contact', icon: <Mail size={16} />, label: 'Contact' },
+  ];
+
   return (
-    <header className="w-full flex justify-between items-start px-8 py-6 absolute top-0 left-0 z-50">
+    <header className="w-full flex justify-between items-center px-8 py-6 fixed top-0 left-0 z-50 pointer-events-none">
       {/* Logo Kiri */}
-      <div className="flex items-center gap-2 text-red-500 font-bold text-2xl tracking-wide">
+      <div className="flex items-center gap-2 text-[#ff4500] font-bold text-2xl tracking-wide w-1/4 pointer-events-auto">
         <span className="text-3xl">✦</span> portfolio
       </div>
 
       {/* Floating Pill Nav Tengah */}
-      <nav className="bg-white/80 backdrop-blur-md border border-white shadow-sm rounded-full px-2 py-2 flex items-center gap-2">
-        <button className="bg-red-500 text-white flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium shadow-md">
-          <Home size={16} /> Home
-        </button>
-        <button className="text-gray-500 hover:text-gray-900 flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium transition-colors">
-          <User size={16} /> About
-        </button>
-        <button className="text-gray-500 hover:text-gray-900 flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium transition-colors">
-          <Briefcase size={16} /> Projects
-        </button>
-        <button className="text-gray-500 hover:text-gray-900 flex items-center gap-2 px-6 py-2 rounded-full text-sm font-medium transition-colors">
-          <Mail size={16} /> Contact
-        </button>
-      </nav>
-
-      {/* Profil Kanan */}
-      <div className="text-right max-w-xs flex flex-col items-end">
-        {/* Menggunakan font-serif untuk mensimulasikan gaya tanda tangan */}
-        <h2 className="font-serif italic text-3xl font-semibold text-gray-800 mb-2">Ahmad Khautal</h2>
-        <p className="text-xs text-gray-500 leading-relaxed text-right mb-4">
-          Hi, I'm Ahmad Khautal. I bridge the gap between engineering and art to design immersive, high-performance web experiences.
-        </p>
-        <button className="flex items-center gap-2 px-5 py-2 border border-gray-300 rounded-full text-xs font-bold tracking-wider hover:bg-gray-100 transition-colors">
-          GET IN TOUCH ↗
-        </button>
+      <div className="flex justify-center w-2/4 pointer-events-auto hidden md:flex">
+        <nav className="bg-white/80 backdrop-blur-md border border-gray-200 shadow-sm rounded-full px-2 py-2 flex items-center gap-1 transition-all duration-300">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 ${
+                active === item.id
+                  ? 'bg-[#ff4500] text-white shadow-md scale-105'
+                  : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'
+              }`}
+            >
+              {item.icon} {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
+
+      <div className="w-1/4"></div>
     </header>
   );
 };
