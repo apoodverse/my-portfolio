@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #ef4444; /* Warna merah/oranye dari desain */
+  }
+}
+
+.bg-perspective-grid {
+  background-color: #f8f9fa;
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  /* Masking radial untuk memberikan efek menghilang di pinggir seperti pada gambar */
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
