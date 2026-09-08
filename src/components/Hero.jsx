@@ -20,7 +20,7 @@ const Hero = () => {
         <div className="flex-1 flex flex-col items-start gap-6">
           <h1 className="text-6xl md:text-[80px] font-black tracking-tighter leading-[1.1] text-gray-900">
             Muhammad <br />
-            <span className="text-[#6366f1]">Hafidzh</span>
+            <span className="text-[#ff4500]">Hafidzh Pribadi</span>
           </h1>
           <p className="text-gray-600 max-w-md font-mono text-sm leading-relaxed mt-2">
             Welcome to my portfolio. Turning ideas into intelligent solutions through IoT systems, Augmented Reality, and user-centered web design.
@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0 relative">
-          <img src="/avatar-placeholder.png" alt="Ahmad Khautal" className="w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl rounded-2xl" />
+          <img src="/apd.jpeg" alt="Ahmad Khautal" className="w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl rounded-2xl" />
         </div>
       </div>
     </section>
