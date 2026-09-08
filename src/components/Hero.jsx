@@ -19,8 +19,8 @@ const Hero = () => {
       <div className="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl px-8 md:pl-40 z-10">
         <div className="flex-1 flex flex-col items-start gap-6">
           <h1 className="text-6xl md:text-[80px] font-black tracking-tighter leading-[1.1] text-gray-900">
-            Ahmad <br />
-            <span className="text-[#6366f1]">Khautal</span>
+            Muhammad <br />
+            <span className="text-[#6366f1]">Hafidzh</span>
           </h1>
           <p className="text-gray-600 max-w-md font-mono text-sm leading-relaxed mt-2">
             Welcome to my portfolio. Turning ideas into intelligent solutions through IoT systems, Augmented Reality, and user-centered web design.
