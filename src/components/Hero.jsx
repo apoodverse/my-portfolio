@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="flex-1 flex justify-center md:justify-end mt-12 md:mt-0 relative">
-          <img src="/apd.jpeg" alt="Ahmad Khautal" className="w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl rounded-2xl" />
+          <img src="/apood.jpeg" alt="Muhammad Hafidzh Pribadi" className="w-[300px] md:w-[400px] h-auto object-contain drop-shadow-2xl rounded-2xl" />
         </div>
       </div>
     </section>

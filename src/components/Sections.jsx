@@ -43,11 +43,11 @@ export const PopupModal = ({ isOpen, onClose, data }) => {
           <X size={20} />
         </button>
 
-        <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative group">
+        <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative group flex items-center justify-center">
           <img 
             src={imageList[currentImageIndex]} 
             alt={`Slide ${currentImageIndex + 1}`} 
-            className="w-full h-full object-cover transition-all duration-300" 
+            className="w-full h-full object-contain p-4 transition-all duration-300" 
           />
           
           {hasMultipleImages && (
@@ -201,7 +201,11 @@ export const Experience = () => {
       subtitle: "Stasiun Kelas 1 Meteorologi Banda Aceh (BMKG)",
       tag: "Internship",
       year: "Dec 2024 - Jan 2025",
-      images: ["/bmkg-1.jpg"], 
+      images: [
+        "/kp1.png",
+        "/kp2.png",
+        "/kp3.jpeg"   
+      ], 
       shortDesc: "Developed and deployed an interactive WebAR educational experience to showcase meteorological instruments.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -213,10 +217,10 @@ export const Experience = () => {
     },
     {
       title: "Independent Study Program (MBKM)",
-      subtitle: "Dicoding Indonesia",
+      subtitle: "Merdeka Belajar Kampus Merdeka",
       tag: "Machine Learning",
       year: "Sep 2024 - Dec 2024",
-      images: ["/dicoding-1.jpg"], 
+      images: ["/mbkm1.jpeg"], 
       shortDesc: "Completed a 3-month structured ML program, building predictive models using Python, Google Colab, and scikit-learn.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -279,7 +283,13 @@ export const Organizations = () => {
       subtitle: "Faculty of Engineering USK",
       tag: "Project Leader",
       year: "2024",
-      images: ["/org-1.jpg"], 
+      images: [
+        "/pbmt0.png",
+        "/pbmt1.jpeg",
+        "/pbmt2.jpeg",
+        "/pbmt3.jpeg",
+        "/pbmt5.jpeg"
+      ], 
       shortDesc: "Directed a community service program at Desa Luthu Lamweu, managing a Rp 10.000.000 operational budget.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -296,7 +306,12 @@ export const Organizations = () => {
       subtitle: "HIMATEKKOM",
       tag: "Head of PR & Member",
       year: "2023 - 2025",
-      images: ["/org-2.jpg"],
+      images: [
+        "/kadiv.jpeg",
+        "/cgs.jpeg",
+        "/cvc.jpeg",
+        "/humas1.png"
+      ],
       shortDesc: "Served as Head of Public Relations Division (2025) and Public Relations Division Member (2023 & 2024).",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -310,7 +325,11 @@ export const Organizations = () => {
       subtitle: "Event Organization",
       tag: "Head of Sponsorship",
       year: "2025",
-      images: ["/org-3.jpg"],
+      images: ["/cmd1.jpeg",
+                "/cmd2.png",
+                "/cmd3.png",
+                "/cmd4.png"
+      ],
       shortDesc: "Served as the Head of Sponsorship & Partnership Division for the Computer Multi Challenge Day 2025.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -323,7 +342,7 @@ export const Organizations = () => {
       subtitle: "Faculty of Engineering USK",
       tag: "PR Division Member",
       year: "2024",
-      images: ["/org-4.jpg"],
+      images: ["/bem1.jpeg"],
       shortDesc: "Served as a Public Relations Division Member for the Student Executive Board, Faculty of Engineering USK in 2024.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -381,11 +400,27 @@ export const Projects = () => {
 
   const projects = [
     { 
+      title: "Industrial Machinery & K3 AR Learning App", 
+      subtitle: "Main Project / Thesis",
+      tag: "Markerless AR",
+      year: "2026",
+      images: ["/ta1.jpeg", "/ta2.jpeg" , "/ta3.jpeg" , "/ta5.png" , "/ta4.png" ], 
+      shortDesc: "Interactive markerless Augmented Reality (AR) Android app using Unity 3D & Vuforia to visualize industrial machines and K3 safety equipment.", 
+      fullDescription: (
+        <ul className="list-disc list-outside ml-5 space-y-2">
+          <li>Developed an interactive markerless Augmented Reality (AR) Android application using Unity 3D, C#, and Vuforia SDK to visualize industrial machines and safety equipment (K3) for vocational students.</li>
+          <li>Designed the UI/UX and 3D interactions, implementing touch gesture controls (rotate/zoom) and a built-in evaluation quiz module, utilizing Figma and Blender for asset optimization.</li>
+          <li>Executed comprehensive system testing, including Black Box testing, to ensure 100% functional stability across navigation and Ground Plane Detection without bugs or crashes.</li>
+          <li>Achieved a "Very Good" User Acceptance Testing (UAT) score of 4.41/5.00 and a System Usability Scale (SUS) score of 72.75, successfully improving students' cognitive understanding and preventive safety awareness.</li>
+        </ul>
+      )
+    },
+    { 
       title: "Banta Ali Smart Paddy Drying System", 
       subtitle: "Innovillage 2025",
       tag: "UI/UX & Hardware",
       year: "2025",
-      images: ["/project-banta-1.jpg", "/project-banta-2.jpg"], 
+      images: ["/Banta1.png", "/Banta2.png" , "/Banta3.png" , "/Banta4.png"], 
       shortDesc: "Designed an ergonomic web dashboard UI/UX and engineered hardware architecture using an ESP32 microcontroller.", 
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -401,7 +436,7 @@ export const Projects = () => {
       subtitle: "IoT & Cloud Project",
       tag: "Fullstack IoT",
       year: "2025",
-      images: ["/project-waste-1.jpg"], 
+      images: ["/kuliahiot1.png" ,"/kuliahiot2.png", "/kuliahiot3.png", "/kuliahiot4.png"], 
       shortDesc: "Developed an end-to-end Smart Waste Management system centered on an ESP32 microcontroller, integrating AWS backend.", 
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -416,7 +451,7 @@ export const Projects = () => {
       subtitle: "Embedded System",
       tag: "Arduino & FSM",
       year: "2024",
-      images: ["/project-irrigation-1.jpg"], 
+      images: ["/embeeded1.jpeg" , "/embeeded2.jpeg"], 
       shortDesc: "Developed an automated embedded system using Arduino Uno to recycle ablution wastewater for mosque garden irrigation.", 
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -431,7 +466,7 @@ export const Projects = () => {
       subtitle: "UI/UX Project",
       tag: "Figma Prototyping",
       year: "2023",
-      images: ["/project-harvest-1.jpg"], 
+      images: ["/hci1.png" ,"/hci2.png" ], 
       shortDesc: "Designed the UI/UX of a conceptual mobile application aimed at bridging local farmers and consumers.", 
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -489,13 +524,14 @@ export const Projects = () => {
 export const Certifications = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
+  // Bagian 1: Penghargaan Utama
   const certifications = [
     {
       title: "Top 180 Innovillage 2025 - Smart Paddy Drying System",
       subtitle: "Telkom University",
       tag: "Achievement / Award",
       year: "2025",
-      images: ["/cert-innovillage-1.jpg"], 
+      images: ["/inno1.png" ,"/inno2.png", "/inno3.png", "/inno4.png"], 
       shortDesc: "Designed and assembled a prototype architecture for an ESP32 microcontroller-based automated paddy drying system.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -510,7 +546,9 @@ export const Certifications = () => {
       subtitle: "Indonesian Digital Telecommunication Professional Certification Agency",
       tag: "BNSP Certification",
       year: "Sep 2025",
-      images: ["/cert-iot-1.jpg"], 
+      images: ["/iot1.jpeg",
+               "/iot2.jpeg"
+      ], 
       shortDesc: "Completed competency certification in IoT Engineering and awarded BNSP Competency Certificate.",
       fullDescription: (
         <ul className="list-disc list-outside ml-5 space-y-2">
@@ -521,13 +559,25 @@ export const Certifications = () => {
     }
   ];
 
+  // Bagian 2: Galeri 6 Sertifikat Visual
+  const certificateGallery = [
+    { title: "IoT Device Engineering", issuer: "BNSP Certification", image: "/iot.png" },
+    { title: "Top 180 Innovillage 2025", issuer: "Telkom University", image: "/inno2.png" },
+    { title: "Belajar Dasar AI", issuer: "Dicoding Indonesia (MBKM)", image: "/d1.png" },
+    { title: "KORIKA AI WEBINAR", issuer: "Korika Indonesia", image: "/korika.png" },
+    { title: "Belajar Dasar Visualisasi Data", issuer: "Dicoding Indonesia (MBKM)", image: "/d2.png" },
+    { title: "Memulai Pemrograman Dengan Phyton", issuer: "Dicoding Indonesia (MBKM)", image: "/d3.png" },
+  ];
+
   return (
     <section id="certifications" className="w-full max-w-6xl mx-auto py-24 px-8 border-t border-gray-200">
+      
+      {/* --- SUB-SECTION 1: KEY ACHIEVEMENTS --- */}
       <div className="inline-block px-4 py-2 bg-gray-900 text-white font-bold text-sm uppercase tracking-widest rounded-md mb-8 shadow-md">
-        Achievements & Awards
+        Key Achievements
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
         {certifications.map((cert, idx) => {
           const coverImage = cert.images && cert.images.length > 0 ? cert.images[0] : '/avatar-placeholder.png';
           return (
@@ -556,6 +606,32 @@ export const Certifications = () => {
             </div>
           );
         })}
+      </div>
+
+      {/* --- SUB-SECTION 2: CERTIFICATIONS & TRAINING GALLERY --- */}
+      <div className="inline-block px-4 py-2 bg-gray-200 text-gray-800 font-bold text-sm uppercase tracking-widest rounded-md mb-8 shadow-sm">
+        Certifications & Training Gallery
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {certificateGallery.map((item, idx) => (
+          <div key={idx} className="bg-white border border-gray-200 rounded-2xl p-4 shadow-sm hover:border-[#6366f1] hover:shadow-lg transition-all group cursor-pointer">
+            <div className="w-full h-40 bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden mb-4 relative">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500" 
+                onError={(e) => { e.target.src = '/avatar-placeholder.png'; }} 
+              />
+              <div className="absolute inset-0 bg-gray-900/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            
+            <div className="flex flex-col">
+              <h4 className="font-bold text-gray-900 text-md truncate">{item.title}</h4>
+              <p className="text-xs font-bold text-gray-500 uppercase mt-1 truncate">{item.issuer}</p>
+            </div>
+          </div>
+        ))}
       </div>
 
       <PopupModal isOpen={!!selectedItem} onClose={() => setSelectedItem(null)} data={selectedItem} />
