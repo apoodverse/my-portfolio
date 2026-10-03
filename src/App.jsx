@@ -25,7 +25,7 @@ function App() {
       </main>
 
       <footer className="relative z-10 py-8 text-center text-gray-400 font-mono text-sm bg-white border-t border-gray-200 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.05)]">
-        <p>Built with React & Tailwind. Designed for Ahmad Khautal.</p>
+        <p>Built with React & Tailwind. Designed for Muhammad Hafidzh Pribadi.</p>
       </footer>
     </div>
   );
