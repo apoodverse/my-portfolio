@@ -38,16 +38,18 @@ export const PopupModal = ({ isOpen, onClose, data }) => {
       >
         <button 
           onClick={onClose} 
-          className="absolute top-4 right-4 bg-white/80 backdrop-blur p-2 rounded-full hover:bg-gray-200 transition z-30 text-gray-900 shadow-sm"
+          className="absolute top-4 right-4 bg-white/80 backdrop-blur p-2 rounded-full hover:bg-gray-200 transition z-30 text-gray-900 shadow-sm cursor-pointer"
         >
           <X size={20} />
         </button>
 
         <div className="w-full md:w-1/2 h-64 md:h-auto bg-gray-100 relative group flex items-center justify-center">
+          {/* Tambahan KEY di sini memaksa React memuat ulang gambar tiap kali index berubah */}
           <img 
+            key={currentImageIndex} 
             src={imageList[currentImageIndex]} 
             alt={`Slide ${currentImageIndex + 1}`} 
-            className="w-full h-full object-contain p-4 transition-all duration-300" 
+            className="w-full h-full object-contain p-4 transition-all duration-300 animate-[fadeIn_0.3s_ease-in-out]" 
           />
           
           {hasMultipleImages && (
@@ -67,9 +69,13 @@ export const PopupModal = ({ isOpen, onClose, data }) => {
               
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                 {imageList.map((_, idx) => (
-                  <div 
-                    key={idx} 
-                    className={`h-2 rounded-full transition-all shadow-sm ${idx === currentImageIndex ? 'w-6 bg-[#ff4500]' : 'w-2 bg-white/80'}`}
+                  <button 
+                    key={idx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex(idx);
+                    }}
+                    className={`h-2 rounded-full transition-all shadow-sm cursor-pointer ${idx === currentImageIndex ? 'w-6 bg-[#ff4500]' : 'w-2 bg-white/80 hover:bg-white'}`}
                   />
                 ))}
               </div>
